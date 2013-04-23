@@ -23,7 +23,7 @@
     <div class="container site-container">
       <div class="row">
         <div class="span12 text-center">
-          <img src="{{ SITELOGOURL }}" class="header" />
+          <a href="{{ SITEURL }}"><img src="{{ SITELOGOURL }}" class="header" /></a>
         </div>
       </div>
 
@@ -53,6 +53,7 @@
       <p>&copy; {{ AUTHOR }} 2013</p>
     </div>
     </footer>
+
     {% include 'disqus_count_script.html' %}
   </body>
 </html>
