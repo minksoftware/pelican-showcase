@@ -1,0 +1,5 @@
+<ul class="unstyled">
+  <li><i class="icon-time"></i> <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.date }}</a>
+  {% if article.author %}<i class="icon-pencil"></i> <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}
+  <i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></li> 
+</ul>

@@ -1,0 +1,10 @@
+{% if article.tags %}
+<ul class="unstyled">
+  <li>
+  <i class="icon-tags"></i> 
+  {% for tag in article.tags %}
+  <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+  {% endfor %}
+  </li>
+</ul>
+{% endif %}

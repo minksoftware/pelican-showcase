@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{{ DISPLAY_PAGE_ON_MENU }}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="{{ AUTHOR }}">
+
+    <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/showcase.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/showcase-icons.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/css/showcase-pygments.css" rel="stylesheet">
+    {% include "analytics.html" %}
+    {% include "disqus.html" %}
+  </head>
+  <body>
+    {% include "facebook.html" %}
+    {% include "github.html" %}
+
+    <div class="container site-container">
+      <div class="row">
+        <div class="span12 text-center">
+          <img src="{{ SITELOGOURL }}" class="header" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12 centered-pills">
+          <ul class="nav nav-pills">
+            <li {% if not page %}class="active"{% endif %}><a href="/">Blog</a></li>
+            {% for title, link in MENUITEMS %}
+            <li {% if page and page.title == title %}class="active"{% endif %}><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          {% block indextitle %}<div class="page-header"><h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1></div>{% endblock %}
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+      <p>Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a></p>
+      <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a> based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+      <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p> 
+      <p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>
+      <p>&copy; {{ AUTHOR }} 2013</p>
+    </div>
+    </footer>
+    {% include 'disqus_count_script.html' %}
+  </body>
+</html>
