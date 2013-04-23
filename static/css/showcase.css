@@ -1,3 +1,11 @@
+a {
+  color: #ac3d13;
+}
+
+.nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>.active>a:focus {
+  background-color: #ac3d13;
+}
+
 .google-search-area {
   margin-top: 20px;
 }
