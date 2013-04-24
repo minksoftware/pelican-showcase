@@ -48,6 +48,14 @@
 
     <footer class="footer">
     <div class="container">
+      <p> 
+        {% if FACEBOOK_URL %}
+        <a href="{{ FACEBOOK_URL }}"><i class="icon-color-facebook icon-2x icon-facebook-sign"></i></a>
+        {% endif %}
+        {% if TWITTER_URL %}
+        <a href="{{ TWITTER_URL }}"><i class="icon-color-twitter icon-2x icon-twitter-sign"></i></a>
+        {% endif %}
+      </p>
       <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a> based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
       <p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>
       <p>&copy; {{ AUTHOR }} 2013</p>
