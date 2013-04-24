@@ -1,5 +1,11 @@
 <ul class="unstyled">
-  <li><i class="icon-time"></i> <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.date }}</a>
-  {% if article.author %}<i class="icon-pencil"></i> <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}
-  <i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></li> 
+  <li><i class="icon-time"></i> <a class="more" href="{{ SITEURL }}/{{ article.url }}">{{ article.locale_date }}</a> </li> 
+  <li>{% if article.author %}<i class="icon-pencil"></i> <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a> {% endif %}</li>
+  <li>
+  <i class="icon-tags"></i> 
+  {% for tag in article.tags %}
+  <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+  {% endfor %}
+  </li>
+  <!-- <li><i class="icon-folder-open"></i> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></li> -->
 </ul>
