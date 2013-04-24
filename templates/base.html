@@ -58,7 +58,7 @@
       </p>
       <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a> based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
       <p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>
-      <p>&copy; {{ AUTHOR }} 2013</p>
+      <p>&copy; {% if COPYRIGHT_HOLDER %} {{ COPYRIGHT_HOLDER }} {% else %} {{ AUTHOR }} {% endif %} 2013</p>
     </div>
     </footer>
 
