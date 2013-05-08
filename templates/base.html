@@ -18,12 +18,15 @@
   </head>
   <body>
     {% include "facebook.html" %}
-    {% include "github.html" %}
 
     <div class="container site-container">
       <div class="row">
         <div class="span12 text-center">
+          {% if SITELOGOURL %}
           <a href="{{ SITEURL }}"><img src="{{ SITELOGOURL }}" class="header" /></a>
+          {% else %}
+          <a style="text-decoration: none" href="{{ SITEURL }}"><h1>{{SITENAME}}</h1></a>
+          {% endif %}
         </div>
       </div>
 
@@ -54,6 +57,9 @@
         {% endif %}
         {% if TWITTER_URL %}
         <a href="{{ TWITTER_URL }}"><i class="icon-color-twitter icon-2x icon-twitter-sign"></i></a>
+        {% endif %}
+        {% if GITHUB_URL %}
+        <a href="{{ GITHUB_URL }}"><i class="icon-color-github icon-2x icon-github-alt"></i></a>
         {% endif %}
       </p>
       <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a> based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
