@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if articles %}
-<div class="page-header"><h1><a href="{{SITE_URL}}">Blog</a> <small>{% block subtitle %}{% endblock %}</small></h1></div>
+<div class="page-header"><h1><a href="/">Blog</a> <small>{% block subtitle %}{% endblock %}</small></h1></div>
 {% for article in (articles_page.object_list if articles_page else articles) %}
 <div class='article'>
     <h3>{{ article.title|title }}</h3>
