@@ -6,10 +6,12 @@
     <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
     <meta name="description" content="">
     <meta name="author" content="{{ AUTHOR }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/bootstrap-3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="{{ SITEURL }}/theme/bootstrap-3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+    -->
+    <link href="{{ SITEURL }}/theme/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase-icons.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase-pygments.css" rel="stylesheet">
@@ -20,8 +22,9 @@
     {% include "facebook.html" %}
 
     <div class="container site-container">
+      <!-- header / logo -->
       <div class="row">
-        <div class="span12 text-center">
+        <div class="col-xs-12 text-center">
           {% if SITELOGOURL %}
           <a href="{{ SITEURL }}"><img src="{{ SITELOGOURL }}" class="header" /></a>
           {% else %}
@@ -30,8 +33,9 @@
         </div>
       </div>
 
+      <!-- navigation pills -->
       <div class="row">
-        <div class="span12 centered-pills">
+        <div class="col-xs-12 centered-pills">
           <ul class="nav nav-pills">
             <li {% if not page %}class="active"{% endif %}><a href="/">Blog</a></li>
             {% for title, link in MENUITEMS %}
@@ -42,7 +46,7 @@
       </div>
 
       <div class="row">
-        <div class="span12">
+        <div class="col-xs-12">
           {% block indextitle %}<div class="page-header"><h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1></div>{% endblock %}
           {% block content %}{% endblock %}
         </div>
@@ -53,16 +57,18 @@
     <div class="container">
       <p> 
         {% if FACEBOOK_URL %}
-        <a href="{{ FACEBOOK_URL }}"><i class="icon-color-facebook icon-2x icon-facebook-sign"></i></a>
+        <a href="{{ FACEBOOK_URL }}"><i class="fa fa-facebook-square fa-2x icon-color-facebook"></i></a>
         {% endif %}
         {% if TWITTER_URL %}
-        <a href="{{ TWITTER_URL }}"><i class="icon-color-twitter icon-2x icon-twitter-sign"></i></a>
+        <a href="{{ TWITTER_URL }}"><i class="fa fa-twitter-square fa-2x icon-color-twitter"></i></a>
         {% endif %}
         {% if GITHUB_URL %}
-        <a href="{{ GITHUB_URL }}"><i class="icon-color-github icon-2x icon-github-alt"></i></a>
+        <a href="{{ GITHUB_URL }}"><i class="fa fa-github-square fa-2x icon-color-github"></i></a>
         {% endif %}
       </p>
-      <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a> based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+      <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a></p>
+      <p>based on: </p>
+      <p><a href="http://getbootstrap.com">Bootstrap, from Twitter</a></p>
       <p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>
       <p>&copy; {% if COPYRIGHT_HOLDER %} {{ COPYRIGHT_HOLDER }} {% else %} {{ AUTHOR }} {% endif %} 2013</p>
     </div>

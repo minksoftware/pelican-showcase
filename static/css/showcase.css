@@ -4,6 +4,14 @@ body
   font-size: 16px;
 }
 
+
+// Classes
+.pull-left {
+      float: left !important;
+  }
+  .pull-right {
+        float: right !important;
+    }
 .site-container {
   background: white;
   padding: 20px;
@@ -14,7 +22,7 @@ a {
   color: #ac3d13;
 }
 
-.nav-pills>.active>a, .nav-pills>.active>a:hover, .nav-pills>.active>a:focus {
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
   background-color: #ac3d13;
 }
 
@@ -85,6 +93,10 @@ h6 {
 
 a.unstyled {
   text-decoration: none;
+}
+
+ul.unstyled {
+    list-style: none;
 }
 
 /* Font Inspiration From Font-Awesome  */
