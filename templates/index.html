@@ -7,7 +7,7 @@
 {% if articles %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
 <div class='article'>
-    <h2><a href="{{article.url}}">{{ article.title|title }}</a></h2>
+    <h2><a href="{{SITEURL}}/{{article.url}}">{{ article.title|title }}</a></h2>
     <div class="row">
         <div class="col-xs-12">
             {% include "metadata.html" %}
