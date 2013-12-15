@@ -7,18 +7,22 @@
     <meta name="description" content="">
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
     <link href="{{ SITEURL }}/theme/bootstrap-3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <!--<link href="{{ SITEURL }}/theme/bootstrap-3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
-    -->
+    <link href="{{ SITEURL }}/theme/bootstrap-3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase-icons.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/css/showcase-pygments.css" rel="stylesheet">
+    <script type="text/javascript" src="{{ SITEURL }}/theme/jquery-2.0.3/jquery-2.0.3.min.js" charset="utf-8"/>
     {% include "analytics.html" %}
     {% include "disqus.html" %}
   </head>
   <body>
+    <script>
+    $(function() { 
+            $("table").addClass("table");
+    });
+    </script>
     {% include "facebook.html" %}
 
     <div class="container site-container">
