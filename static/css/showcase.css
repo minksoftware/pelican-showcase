@@ -1,31 +1,41 @@
 body 
 { 
-  background: #f5f5f5; 
-  font-size: 16px;
+    background: #f5f5f5; 
+    font-size: 16px;
 }
-
 
 // Classes
 .pull-left {
-      float: left !important;
-  }
-  .pull-right {
-        float: right !important;
-    }
+    float: left !important;
+}
+
+.pull-right {
+    float: right !important;
+}
 .site-container {
-  background: white;
-  padding: 20px;
-  border: 1px solid #e5e5e5;
+    background: white;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
 }
 
 .google-search-area {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
+img.splash {
+    height: 30%;
+    width: 30%;
+}
+
+.center-y{vertical-align:middle;}
+
+h1.splash {
+    font-size: 2.5em;
+}
 
 img.header {
-  height: 162px;
-  width: 246px;
+    height: 162px;
+    width: 246px;
 }
 
 .centered-pills { font-size: 18px; padding-top:20px; }
@@ -37,35 +47,35 @@ img.header {
 *+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
 
 .footer {
-  text-align: center;
-  padding: 30px 0;
-  //margin-top: 70px;
-  //border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+    text-align: center;
+    padding: 30px 0;
+    //margin-top: 70px;
+    //border-top: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
 }
 
 hr.soften-right {
-  height: 1px;
-  margin: 10px 0;
-  background-image: -webkit-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
-  background-image:    -moz-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
-  background-image:     -ms-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
-  background-image:      -o-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
-  border: 0;
+    height: 1px;
+    margin: 10px 0;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,.1), rgba(0,0,0,0), rgba(0,0,0,0));
+    border: 0;
 }
 
 hr.soften-left-right {
-  height: 1px;
-  margin: 10px 0;
-  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
-  border: 0;
+    height: 1px;
+    margin: 10px 0;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+    border: 0;
 }
 
 body {
-  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,
@@ -74,17 +84,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: museo-slab, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: museo-slab, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .page-content h1,
 .page-content h2,
 .page-content h3 {
-  margin: 20px 0px;
+    margin: 20px 0px;
 }
 
 a.unstyled {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 ul.unstyled {
@@ -93,37 +103,37 @@ ul.unstyled {
 
 /* Font Inspiration From Font-Awesome  */
 @font-face {
-  font-family: 'museo-slab';
-  src: url('../font/museo_slab_300-webfont.eot');
-  src: url('../font/museo_slab_300-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../font/museo_slab_300-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'museo-slab';
+    src: url('../font/museo_slab_300-webfont.eot');
+    src: url('../font/museo_slab_300-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/museo_slab_300-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'museo-slab';
-  src: url('../font/museo_slab_500-webfont.eot');
-  src: url('../font/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../font/museo_slab_500-webfont.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'museo-slab';
+    src: url('../font/museo_slab_500-webfont.eot');
+    src: url('../font/museo_slab_500-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/museo_slab_500-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'proxima-nova';
-  src: url('../font/proximanova-webfont.eot');
-  src: url('../font/proximanova-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../font/proximanova-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'proxima-nova';
+    src: url('../font/proximanova-webfont.eot');
+    src: url('../font/proximanova-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/proximanova-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'proxima-nova';
-  src: url('../font/proximanova-sbold-webfont.eot');
-  src: url('../font/proximanova-sbold-webfont.eot?#iefix') format('embedded-opentype'),
-  url('../font/proximanova-sbold-webfont.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'proxima-nova';
+    src: url('../font/proximanova-sbold-webfont.eot');
+    src: url('../font/proximanova-sbold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/proximanova-sbold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }

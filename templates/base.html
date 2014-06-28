@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 {{ DISPLAY_PAGE_ON_MENU }}
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="author" content="{{ AUTHOR }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="{{ SITEURL }}/theme/bootstrap-3.0.3-showcase/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/showcase.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/showcase-icons.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/css/showcase-pygments.css" rel="stylesheet">
-    <script type="text/javascript" src="{{ SITEURL }}/theme/jquery-2.0.3/jquery-2.0.3.min.js" charset="utf-8"/>
-    {% include "analytics.html" %}
-    {% include "disqus.html" %}
-  </head>
-  <body>
-    <script>
-    $(function() { 
-            $("table").addClass("table");
-    });
-    </script>
-    {% include "facebook.html" %}
+<head>
+<meta charset="utf-8">
+<title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+<meta name="description" content="">
+<meta name="author" content="{{ AUTHOR }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="{{ SITEURL }}/theme/bootstrap-3.0.3-showcase/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ SITEURL }}/theme/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ SITEURL }}/theme/css/showcase.css" rel="stylesheet">
+<link href="{{ SITEURL }}/theme/css/showcase-icons.css" rel="stylesheet">
+<link href="{{ SITEURL }}/theme/css/showcase-pygments.css" rel="stylesheet">
+<script type="text/javascript" src="{{ SITEURL }}/theme/jquery-2.0.3/jquery-2.0.3.min.js" charset="utf-8"/>
+{% include "analytics.html" %}
+{% include "disqus.html" %}
+</head>
+<body>
+<script>
+$(function() { 
+        $("table").addClass("table");
+        });
+</script>
+{% include "facebook.html" %}
 
-    <div class="container site-container">
-      <!-- header / logo -->
-      <div class="row">
+{% if SITEDISABLE %}
+{% if SITELOGOURL %}
+<div class="container text-center center-y" style="height: 100%;">
+    <img src="{{ SITELOGOURL }}" class="splash" />
+    <h1 class="splash">{{ SITEDISABLETEXT }}</h1>
+</div>
+{% endif %}
+{% else %}
+<div class="container site-container">
+    <!-- header / logo -->
+    <div class="row">
         <div class="col-xs-12 text-center">
-          {% if SITELOGOURL %}
-          <a href="{{ SITEURL }}"><img src="{{ SITELOGOURL }}" class="header" /></a>
-          {% else %}
-          <a style="text-decoration: none" href="{{ SITEURL }}"><h1>{{SITENAME}}</h1></a>
-          {% endif %}
+            {% if SITELOGOURL %}
+            <img src="{{ SITELOGOURL }}" />
+            {% else %}
+            <a style="text-decoration: none" href="{{ SITEURL }}"><h1>{{SITENAME}}</h1></a>
+            {% endif %}
         </div>
-      </div>
-
-      <!-- navigation pills -->
-      <div class="row">
-        <div class="col-xs-12 centered-pills">
-          <ul class="nav nav-pills">
-            <li {% if not page %}class="active"{% endif %}><a href="/">Blog</a></li>
-            {% for title, link in MENUITEMS %}
-            <li {% if page and page.title == title %}class="active"{% endif %}><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12">
-          {% block indextitle %}<div class="page-header"><h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1></div>{% endblock %}
-          {% block content %}{% endblock %}
-        </div>
-      </div>
     </div>
 
-    <footer class="footer">
+    <!-- navigation pills -->
+    <div class="row">
+        <div class="col-xs-12 centered-pills">
+            <ul class="nav nav-pills">
+                <li {% if not page %}class="active"{% endif %}><a href="/">Blog</a></li>
+                {% for title, link in MENUITEMS %}
+                <li {% if page and page.title == title %}class="active"{% endif %}><a href="{{ link }}">{{ title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            {% block indextitle %}<div class="page-header"><h1>{% block title %} {{ self.windowtitle() }} {% endblock %}</h1></div>{% endblock %}
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<footer class="footer">
     <div class="container">
-      <p> 
+        {% if not DISABLE_SOCIAL_MEDIA %}
+        <p> 
         {% if FACEBOOK_URL %}
         <a href="{{ FACEBOOK_URL }}"><i class="fa fa-facebook-square fa-2x icon-color-facebook"></i></a>
         {% endif %}
@@ -68,15 +78,16 @@
         {% if GITHUB_URL %}
         <a href="{{ GITHUB_URL }}"><i class="fa fa-github-square fa-2x icon-color-github"></i></a>
         {% endif %}
-      </p>
-      <p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a></p>
-      <p>based on: </p>
-      <p><a href="http://getbootstrap.com">Bootstrap, from Twitter</a></p>
-      <p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>
-      <p>&copy; {% if COPYRIGHT_HOLDER %} {{ COPYRIGHT_HOLDER }} {% else %} {{ AUTHOR }} {% endif %} 2013</p>
+        </p>
+        {% endif %}
+        {% if not DISABLE_CREDIT_SHOWCASE %}<p><a href="http://github.com/minksoftware/pelican-showcase">Showcase</a></p>{% endif %}
+        {% if not DISABLE_CREDIT_BOOTSTRAP %}<p>based on: </p> <p><a href="http://getbootstrap.com">Bootstrap, from Twitter</a></p>{% endif %}
+        {% if not DISABLE_CREDIT_FONT_AWESOME %}<p><a href="http://fortawesome.github.com/Font-Awesome">Font Awesome by Dave Gandy</a></p>{% endif %}
+        <p>&copy; {% if COPYRIGHT_HOLDER %} {{ COPYRIGHT_HOLDER }} {% else %} {{ AUTHOR }} {% endif %} {{ COPYRIGHT_YEAR }}</p>
     </div>
-    </footer>
+</footer>
 
-    {% include 'disqus_count_script.html' %}
-  </body>
+
+{% include 'disqus_count_script.html' %}
+</body>
 </html>
